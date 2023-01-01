@@ -38,7 +38,7 @@ class SSD1306(object):
         self.Column = width
         self.Page = int(height/8)
         self.addr = addr
-        self.bus = SMBus(1)
+        self.bus = SMBus(0)
 
     def SendCommand(self, cmd):# write command
         self.bus.write_byte_data(self.addr, 0x00, cmd)
